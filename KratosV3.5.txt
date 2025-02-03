@@ -1,0 +1,1255 @@
+--[[Move And Ultimate Names]]
+
+--[[Created By Uzi Also I Used STemplate Too, Thank You For Reading]]
+
+-- MORPH
+
+local whitehead = game.Players.LocalPlayer.Character:WaitForChild("Head")
+whitehead.BrickColor = BrickColor.new("White")
+
+local whitetorso = game.Players.LocalPlayer.Character:WaitForChild("Torso")
+whitetorso.BrickColor = BrickColor.new("White")
+
+local whitelarm = game.Players.LocalPlayer.Character:WaitForChild("Left Arm")
+whitelarm.BrickColor = BrickColor.new("White")
+
+local whiterarm = game.Players.LocalPlayer.Character:WaitForChild("Right Arm")
+whiterarm.BrickColor = BrickColor.new("White")
+
+local whitelleg = game.Players.LocalPlayer.Character:WaitForChild("Left Leg")
+whitelleg.BrickColor = BrickColor.new("White")
+
+local whiterleg = game.Players.LocalPlayer.Character:WaitForChild("Right Leg")
+whiterleg.BrickColor = BrickColor.new("White")
+
+
+local char = game.Players.LocalPlayer.Character
+
+pcall(function() char.Pants:Destroy() end)
+local v = Instance.new("Pants")
+v.Parent = char
+v.PantsTemplate = 'rbxassetid://12201308687'
+v.Name = 'Pants'
+pcall(function() char.Shirt:Destroy() end)
+local v = Instance.new("Shirt")
+v.Parent = char
+v.ShirtTemplate = 'rbxassetid://12201307420'
+v.Name = 'Shirt'
+pcall(function() char['Shirt Graphic']:Destroy() end)
+local v = Instance.new("ShirtGraphic")
+v.Graphic = 'rbxassetid://12201307428'
+v.Name = 'Shirt Graphic'
+
+local assetId = 116213279330836 
+-- Load the fleece (Folder)
+local fleece = game:GetObjects("rbxassetid://" .. assetId)[1]
+
+-- Ensure the fleece was loaded properly
+if fleece then
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        -- Wait for character parts to be loaded
+        local rightArm = character:WaitForChild("Right Arm")
+
+        if rightArm then
+            -- Parent the fleece to the workspace
+            fleece.Parent = workspace
+
+            -- Iterate through all parts in the folder and position them
+            for _, part in pairs(fleece:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    -- Position the part relative to the right arm
+                    part.Position = rightArm.Position + Vector3.new(0, 0, 0) -- Adjust offset if necessary
+                    part.CanCollide = false -- Disable collision
+                    part.Anchored = false    -- Anchor parts to keep them in place
+
+                    -- Create a weld for each part
+                    local weld = Instance.new("Weld")
+                    weld.Part0 = rightArm -- The part you're welding to
+                    weld.Part1 = part -- The part you're welding
+                    weld.C0 = CFrame.new(0, 0.5, 0) * CFrame.Angles(0, 0, 0)
+                    weld.Parent = part -- Parent the weld to the part being welded
+                end
+            end
+        end
+    end
+end
+
+
+local assetId = 14325945986 
+-- Load the toshead (Folder)
+local toshead = game:GetObjects("rbxassetid://" .. assetId)[1]
+
+-- Ensure the toshead was loaded properly
+if toshead then
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        -- Wait for character parts to be loaded
+        local headpart = character:WaitForChild("Head")
+
+        if headpart then
+            -- Parent the toshead to the workspace
+            toshead.Parent = headpart
+
+            -- Iterate through all parts in the folder and position them
+            for _, part in pairs(toshead:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    -- Position the part relative to the right arm
+                    part.Position = headpart.Position + Vector3.new(0, 0, 0) -- Adjust offset if necessary
+                    part.CanCollide = false -- Disable collision
+                    part.Anchored = false    -- Anchor parts to keep them in place
+
+                    -- Create a weld for each part
+                    local weld = Instance.new("Weld")
+                    weld.Part0 = headpart -- The part you're welding to
+                    weld.Part1 = part -- The part you're welding
+                    weld.C0 = CFrame.new(0, 0, 0) * CFrame.Angles(0, 0, 0)
+                    weld.Parent = part -- Parent the weld to the part being welded
+                end
+            end
+        end
+    end
+end
+
+
+local assetId = 14325945986 
+-- Load the toshead (Folder)
+local toshead = game:GetObjects("rbxassetid://" .. assetId)[1]
+
+-- Ensure the toshead was loaded properly
+if toshead then
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        -- Wait for character parts to be loaded
+        local headpart = character:WaitForChild("Head")
+
+        if headpart then
+            -- Parent the toshead to the workspace
+            toshead.Parent = headpart
+
+            -- Iterate through all parts in the folder and position them
+            for _, part in pairs(toshead:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    -- Position the part relative to the right arm
+                    part.Position = headpart.Position + Vector3.new(0, 0, 0) -- Adjust offset if necessary
+                    part.CanCollide = false -- Disable collision
+                    part.Anchored = false    -- Anchor parts to keep them in place
+
+                    -- Create a weld for each part
+                    local weld = Instance.new("Weld")
+                    weld.Part0 = headpart -- The part you're welding to
+                    weld.Part1 = part -- The part you're welding
+                    weld.C0 = CFrame.new(0, 0, 0) * CFrame.Angles(0, 0, 0)
+                    weld.Parent = part -- Parent the weld to the part being welded
+                end
+            end
+        end
+    end
+end
+
+-- END OF MORPH
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("1").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Spartan Punch" --[[Change This]]
+
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("2").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Titan's Rage" --[[Change This]]
+
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("3").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Olympian Cleave" --[[Change This]]
+
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("4").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Ascendent of Titans" --[[Change This]]
+
+
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+local playerGui = player:WaitForChild("PlayerGui")
+
+
+local function findGuiAndSetText()
+
+    local screenGui = playerGui:FindFirstChild("ScreenGui")
+
+    if screenGui then
+
+        local magicHealthFrame = screenGui:FindFirstChild("MagicHealth")
+
+        if magicHealthFrame then
+
+            local textLabel = magicHealthFrame:FindFirstChild("TextLabel")
+
+            if textLabel then
+
+                textLabel.Text = "Spartan Rage" --[[Yup Change Me]]
+
+            end
+
+        end
+
+    end
+
+end
+
+
+playerGui.DescendantAdded:Connect(findGuiAndSetText)
+
+findGuiAndSetText()
+
+--[[Animations]]
+
+--[[Move 1]]
+
+local animationId = 10468665991 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://140164642047188" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 6.6 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1.1) --[[Speed Yeah Yeah.]]
+
+local Test = game.ReplicatedStorage.Resources.HeadFirstFinisher.jump.jump.jump.Attachment
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = false
+    end
+end
+
+
+
+
+    end
+
+end
+
+--[[END OF MOVE 1 ANIM]]
+
+--[[Move 2]]
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10466974800 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://18896229321" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+
+    end
+
+end
+
+--[[END OF MOVE 2 ANIM]]
+
+--[[Move 3]]
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10471336737 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://128022763591042" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1.5) --[[Speed Yeah Yeah.]]
+
+local Test = game.ReplicatedStorage.Resources.HammerVfx.FloorFx.Attachment
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = false
+    end
+end
+
+
+    end
+
+end
+
+--[[END OF MOVE 3 ANIM]]
+
+--[[Move 4]]
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 12510170988 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://13497875049" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1.5) --[[Speed Yeah Yeah.]]
+
+local Test = game.ReplicatedStorage.Resources.DogVariant.SlamAgainIg.Attachment
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = false
+    end
+end
+
+
+    end
+
+end
+
+--[[END OF MOVE 4 ANIM]]
+
+--[[Wall combo]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+local animationId = 15955393872 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://18716485513" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+
+    end
+
+end
+
+--[[END OF WALL COMBO ANIM]]
+
+--[[Ult Activation]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 12447707844 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://17106858586 "
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://113876851900426" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+local Test = game.ReplicatedStorage.Resources.SunsetEffects.SwordInGround.Turned.Attachment
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = false
+    end
+end
+
+
+    end
+
+end
+--[[END OF ULT ACTIVATION ANIM]]
+
+--[[Dash]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10479335397 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://10479335397" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(1.0) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+
+    end
+
+end
+
+--[[END OF DASH ANIM]]
+
+--[[Uppercut]]
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10503381238 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://140164642047188" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0.2 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+
+    end
+
+end
+
+--[[END OF UPPERCUT ANIM]]
+
+--[[Downslam]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10470104242 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://17859055671" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0.2 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+
+    end
+
+end
+
+--[[END OF DOWNSLAM ANIM]]
+
+-- M1's Add VFX If You Want
+
+--[[1]]
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10469493270 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://15259161390" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+
+   end
+
+end
+
+--[[2]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10469630950 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://15240216931" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+
+    end
+
+end
+
+--[[3]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10469639222 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://15240176873" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+local Test = game.ReplicatedStorage.Emotes.VFX.RealAssets.Humiliation.Part.Necksnap
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = false
+    end
+end
+
+
+    end
+
+end
+
+--[[4]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10469643643 --[[The Fricking Id That Will Get The Track]]
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://15162694192" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1.7) --[[Speed Yeah Yeah.]]
+
+local Test = game.ReplicatedStorage.Emotes.VFX.RealAssets.Humiliation.Part.Necksnap
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = false
+    end
+end
+
+
+    end
+
+end
+
+--[[Extra]]
+
+player.CharacterAdded:Connect(function(newCharacter)
+
+    character = newCharacter
+
+    humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+    character.DescendantAdded:Connect(onBodyVelocityAdded)
+
+   
+
+    for _, descendant in pairs(character:GetDescendants()) do
+
+        onBodyVelocityAdded(descendant)
+
+    end
+
+end) --[[Don't Change cuz it's a support]]
+
+--[[Garou Color Changer !DELETE IF NOT NEEDED!]]
+
+--[[LEFT ARM COLORS]]
+
+local char = game.Players.LocalPlayer.Character
+getgenv().LArmCol = char['Left Arm'].ChildAdded:Connect(function(pp)
+if pp.Name == 'WaterPalm' then
+for i,v in pairs(pp:WaitForChild('ConstantEmit'):GetChildren()) do
+v.Color =
+ColorSequence.new{ColorSequenceKeypoint.new(0.00, 
+Color3.fromRGB(255, 0, 0)), -- Change Color (Red, Green, Blue)
+ColorSequenceKeypoint.new(1.00, 
+Color3.fromRGB(0, 0, 255))} -- Change Color (Red, Green, Blue)
+end
+
+pp:WaitForChild('WaterTrail').Color = 
+ColorSequence.new{ColorSequenceKeypoint.new(0.00, 
+Color3.fromRGB(255, 0, 0)), -- Change Color (Red, Green, Blue)
+ColorSequenceKeypoint.new(1.00, 
+Color3.fromRGB(0, 0, 255))} -- Change Color (Red, Green, Blue)
+
+end end)
+--[[RIGHT ARM colors]]
+
+getgenv().RArmCol = char['Right Arm'].ChildAdded:Connect(function(pp)
+if pp.Name == 'WaterPalm' then
+for i,v in pairs(pp:WaitForChild('ConstantEmit'):GetChildren()) do
+v.Color =
+ColorSequence.new{ColorSequenceKeypoint.new(0.00, 
+Color3.fromRGB(255, 0, 0)), -- Change Color (Red, Green, Blue)
+ColorSequenceKeypoint.new(1.00, 
+Color3.fromRGB(0, 0, 255))} -- Change Color (Red, Green, Blue)
+end
+pp:WaitForChild('WaterTrail').Color = 
+ColorSequence.new{ColorSequenceKeypoint.new(0.00, 
+Color3.fromRGB(255, 0, 0)), -- Change Color (Red, Green, Blue) 
+ColorSequenceKeypoint.new(1.00, 
+Color3.fromRGB(0, 0, 255))} -- Change Color (Red, Green, Blue)
+
+end end)
+
+--[[END OF GAROU COLORS]]
+
+--[[Extra 2]]
+
+-- Quotes When Executed
+
+local Message = "This is my fight Atreus, Go!"
+
+-- don't change anything here unless you know
+game:GetService("Chat"):Chat(game.Players.LocalPlayer.Character, Message)
+
+-- Spawn Animation When Executed
+
+local p = game.Players.LocalPlayer
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+    animTrack:Stop()
+end
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://107649573628906" --[[Find an Id Is Somewhere Idk What's Going On In My Life]]
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0 --[[The Start Time Bitc]]
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1) --[[DOES LITERALLY NOTHING]]
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9) --[[Speed Yeah Yeah.]]
+
+--[[End Of Things. Yeah]]
+
+--[[Invite Link]]
+local function copyTextToClipboard(text)
+    local success, message = pcall(function()
+        -- Windows kopyalama ilemi
+        setclipboard(text)
+    end)
+    if not success then
+        warn("" .. message)
+    end
+end
+
+-- Copy text
+copyTextToClipboard("https://discord.gg/BsARybZz8H")
+
+--[[End of Invite Link]]
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Wait for character to load
+if not character then
+    warn("Character not found!")
+    return
+end
+
+local rightArm = character:FindFirstChild("Right Arm")
+local leftArm = character:FindFirstChild("Left Arm")
+
+if not rightArm or not leftArm then
+    warn("Right or Left Arm not found! Ensure this is R6.")
+    return
+end
+
+-- Function to create and attach a blade with proper grip
+local function createBlade(arm, name, positionOffset, rotation)
+    local blade = Instance.new("Part")
+    blade.Name = name
+    blade.BottomSurface = Enum.SurfaceType.Smooth
+    blade.TopSurface = Enum.SurfaceType.Smooth
+    blade.Size = Vector3.new(4, 1, 2)
+    blade.Anchored = false
+    blade.CanCollide = false
+
+    -- Mesh
+    local mesh = Instance.new("SpecialMesh")
+    mesh.Scale = Vector3.new(40, 40, 50)
+    mesh.MeshId = "rbxassetid://3266423688"
+    mesh.TextureId = "rbxassetid://3266452949"
+    mesh.MeshType = Enum.MeshType.FileMesh
+    mesh.Parent = blade
+
+    -- Motor6D for attachment
+    local motor = Instance.new("Motor6D")
+    motor.Part0 = arm
+    motor.Part1 = blade
+    motor.Parent = arm
+
+    -- Adjust position & rotation
+    motor.C0 = CFrame.new(positionOffset.X, positionOffset.Y, positionOffset.Z) 
+        * CFrame.Angles(math.rad(rotation.X), math.rad(rotation.Y), math.rad(rotation.Z))
+
+    -- Parent blade to character
+    blade.Parent = character
+end
+
+-- Right Arm Blade (Held Properly)
+createBlade(
+    rightArm, 
+    "Blade of Chaos (Right)", 
+    Vector3.new(0, -1, -1),  -- Moves it into the hand
+    Vector3.new(0, 90, 0)  -- Rotates to point forward
+)
+
+-- Left Arm Blade (Mirrored Grip)
+createBlade(
+    leftArm, 
+    "Blade of Chaos (Left)", 
+    Vector3.new(0, -1, -1),  -- Moves it into the hand
+    Vector3.new(0, 90, 0)  -- Rotates to mirror the right arm
+)
+
+--[[Credits]]
+--[[Moveset By Omar]]
+--[[I'm Lazy]]
+
+--[[                                                                                                          
+-- Template From Sea Blue
+-- 1:SeaBlue
+-- 2:KJ Hub
+]]
+
+--[[I'm Adding Everything Later and I'll) update the Template Credits]]
